@@ -1,0 +1,20 @@
+>> Routing <<
+1) Routing component is main component which consist of three sub component
+   i) Header 
+   ii) Routes
+   iii) Footer
+2) Routing component acts as a SPA in our react application
+
+>> Header <<
+1) Header component is the top most part of our react SPA
+2) Header consist of text and logIn and signUp links
+
+>> Routes << 
+1) Routes is middle part of our react SPA
+2) Routes is used to display multiple react component without 
+   refreshing the page
+
+>> Footer << 
+1) Footer is bottom part of our react SPA
+1) Footer is used to display text
+

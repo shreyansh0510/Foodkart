@@ -1,0 +1,6 @@
+>> Restaurants Details <<
+
+1) Restaurants Details is class component
+2) It uses ES6 async-await feature to call the api 
+3) It is being navigated from ListingDiplay component
+4) It provide the data about selected restaurants

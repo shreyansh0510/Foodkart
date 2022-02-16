@@ -1,0 +1,11 @@
+// >> Listing <<
+
+// 1) Listing is a class component
+// 2) Listing uses axios to fetch api data
+// 3) Listing is being navigated from QuickDislay component
+// 4) Listing sends JSON data to its child i.e. ListingDisplay component 
+
+// >> Listing Display <<
+
+// 1) Listing Display is a functional component
+// 2) Listing Display renders specific mealtype restaurants

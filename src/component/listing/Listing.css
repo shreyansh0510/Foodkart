@@ -1,0 +1,16 @@
+.listingClass {
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
+}
+
+.listingFilter {
+  width: 40%;
+  border: 2px solid gray;
+  height: 80vh;
+}
+
+.filterText {
+  font-size: 1rem;
+  color: gray;
+}

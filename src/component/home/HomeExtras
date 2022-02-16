@@ -1,0 +1,26 @@
+>> Home Component <<
+1) Home component consist of two sub components:
+   i) Search 
+   ii) QuickSearch
+2) It is act as a container for Search and QuickSearch components
+3) Home component layout is divided into 2 different components i.e. Search
+   and QuickSearch 
+
+
+>> Search Component <<
+1) Search folder is the upper part of our Home component 
+2) It consist of background-image, title text, search city and restaurants
+   dropdown options
+
+
+>> QuickSearch Component <<
+1) QuickSearch is the lower part of our Home component
+2) QuickSearch contains text and a sub component i.e. QuickDisplay 
+
+
+>> QuickDisplay << 
+1) QuickDisplay is child of QuickSearch component
+2) QuickDisplay consist of meal type cards 
+
+
+

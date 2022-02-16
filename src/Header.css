@@ -1,0 +1,69 @@
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.85);
+  font-size: 0.8rem;
+  /* position: fixed; */
+  /* z-index: 1; */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.navbarRight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.home {
+  color: white;
+  letter-spacing: 0.03cm;
+  opacity: 0.9;
+}
+
+.home:hover {
+  opacity: 1;
+}
+
+.getApp {
+  color: white;
+  letter-spacing: 0.03cm;
+  opacity: 0.9;
+}
+
+.getApp:hover {
+  opacity: 1;
+}
+
+.navbarOptions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  width: 50%;
+}
+
+.navbarOptions span {
+  color: white;
+  opacity: 0.8;
+}
+
+.navbarOptions span:hover {
+  color: #ffff;
+  opacity: 1;
+}
