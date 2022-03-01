@@ -1,0 +1,35 @@
+.restaurantsDetailsClass {
+  width: 80%;
+  margin: 10px auto;
+}
+
+.restaurantsImage {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.restaurantsDescription {
+  background-color: rgb(83, 83, 83);
+  padding: 10px;
+}
+
+.restaurantsDescription h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+}
+
+.restaurantsDescription h6 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 5px 0;
+  color: rgb(104, 104, 104);
+}
+
+.reactTabs {
+  padding: 10px;
+}
+
+.tabList{
+  background-color: rgb(245, 245, 245);
+}

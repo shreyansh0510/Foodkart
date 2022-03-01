@@ -60,7 +60,7 @@ class Search extends Component {
       <>
         <div className="search">
           <div className="searchImage">
-            <img src="/images/home1.jpg" alt="home" />
+            <img src="/images/home1.jpg" alt="home" height />
           </div>
 
           <div className="searchSection">
