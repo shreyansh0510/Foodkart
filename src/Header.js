@@ -2,6 +2,7 @@ import React from "react";
 import "./Header.css";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import { makeStyles } from "@mui/styles";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -17,7 +18,9 @@ function Header() {
       <div className="header">
         <div className="navbar">
           <div className="navbarLeft">
-            <div className="home">Home</div>
+            <Link to={`/`}>
+              <div className="home">Home</div>
+            </Link>
           </div>
           <div className="navbarRight">
             <div className="logo">

@@ -1,0 +1,46 @@
+.orderDisplayClass {
+  width: 100%;
+}
+
+.orderList {
+  font-size: 1.5rem;
+  width: 80%;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto;
+}
+
+thead {
+  background-color: rgb(59, 59, 59);
+  color: rgb(255, 255, 255);
+}
+
+th {
+  /* border: 1px solid #dddddd; */
+  text-align: left;
+  padding: 10px;
+  color: white;
+  font-weight: normal;
+  text-align: center;
+}
+
+td {
+  border: 1px solid #ffffff;
+  text-align: left;
+  padding: 10px;
+  text-align: center;
+}
+
+tr {
+  box-shadow: 1px 1px 2px 0px #b9b9b9;
+}
+
+tr:nth-child(even) {
+  /* background-color: #dddddd; */
+}

@@ -17,7 +17,7 @@ class MenuDisplay extends Component {
     };
   }
 
-  addItems = (items) => {
+  addItem = (items) => {
     //add menu item's(dish) unique ID to orderId array[]
     this.state.orderId.push(items);
     //passes data from child(MenuDisplay) to parent(RestaurantDetails) inorder
@@ -25,9 +25,15 @@ class MenuDisplay extends Component {
     this.props.finalOrder(this.state.orderId);
   };
 
+  removeItem = (id) => {
+    if (this.state.orderId.includes(id)) {
+      this.state.orderId.splice(this.state.orderId.indexOf(id), 1);
+      this.props.finalOrder(this.state.orderId);
+    }
+  };
+
   //returns menu item's(dish) unique ID
   renderItems = (items) => {
-    console.log(items);
     if (items) {
       return items.map((item) => {
         return <span key={item}>{item}&nbsp;</span>;
@@ -47,6 +53,7 @@ class MenuDisplay extends Component {
           >
             <MenuList>
               <MenuItem>
+                <ListItemText>{items.menu_id}</ListItemText>
                 <ListItemText>
                   <img
                     src={items.menu_image}
@@ -70,12 +77,17 @@ class MenuDisplay extends Component {
                   <Button
                     variant="contained"
                     color="success"
-                    onClick={() => this.addItems(items.menu_id)}
+                    onClick={() => this.addItem(items.menu_id)}
                   >
                     +
                   </Button>
                   &nbsp;
-                  <Button variant="contained">-</Button>
+                  <Button
+                    variant="contained"
+                    onClick={() => this.removeItem(items.menu_id)}
+                  >
+                    -
+                  </Button>
                 </Typography>
               </MenuItem>
             </MenuList>

@@ -1,6 +1,8 @@
 >> Restaurants Details <<
 
-1) Restaurants Details is class component
+1) Restaurants Details is a class component
 2) It uses ES6 async-await feature to call the api 
 3) It is being navigated from ListingDiplay component
-4) It provide the data about selected restaurants
+4) It provide the details about selected restaurants such as contact, details, menu, cost of two etc. 
+5) onClick of Proceed button it uses session storage (selected item id's) and navigates to <PlaceOrder/> component 
+   using react-router history() method 

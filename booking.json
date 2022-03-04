@@ -1,0 +1,64 @@
+{
+  "booking": [
+    {
+      "id": 68144,
+      "resaurantName": "Domino's Pizza",
+      "idDetails": "1,2,3",
+      "name": "shreyansh singh",
+      "email": "shreynashsingh@gmail.com",
+      "phone": "8052844555",
+      "address": "123 DLF City Noida",
+      "totalCost": 577
+    },
+    {
+      "id": 76855,
+      "resaurantName": "Pandit Ji Paratha Hut",
+      "idDetails": "6,7",
+      "name": "shreyansh singh",
+      "email": "shreynashsingh@gmail.com",
+      "phone": "8052844555",
+      "address": "123 DLF City Noida",
+      "totalCost": 175
+    },
+    {
+      "id": 8293,
+      "resaurantName": "Empire Restaurant",
+      "idDetails": "20,21",
+      "name": "shreyansh singh",
+      "email": "shreynashsingh@gmail.com",
+      "phone": "8052844555",
+      "address": "123 DLF City Noida",
+      "totalCost": 280
+    },
+    {
+      "id": 32507,
+      "resaurantName": "Empire Restaurant",
+      "idDetails": "20,21",
+      "name": "shreyansh singh",
+      "email": "shreynashsingh@gmail.com",
+      "phone": "8052844555",
+      "address": "123 DLF City Noida",
+      "totalCost": 280
+    },
+    {
+      "id": 8816,
+      "resaurantName": "Domino's Pizza",
+      "idDetails": "1,2,3",
+      "name": "shreyansh singh",
+      "email": "shreynashsingh@gmail.com",
+      "phone": "8052844555",
+      "address": "123 DLF City Noida",
+      "totalCost": 577
+    },
+    {
+      "id": 60401,
+      "resaurantName": "Food Adda",
+      "idDetails": "",
+      "name": "shreyansh singh",
+      "email": "shreynashsingh@gmail.com",
+      "phone": "8052844555",
+      "address": "123 DLF City Noida",
+      "totalCost": 0
+    }
+  ]
+}

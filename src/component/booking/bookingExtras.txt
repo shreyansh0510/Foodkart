@@ -1,0 +1,18 @@
+>> Place Order <<
+1) Place order is a class component
+2) It uses inbuilt fetch method to call API
+3) It is being navigated from <RestaurantDetails/> component via proceed button
+4) It contains restraunt heading, total cost, items selected, place order form and button
+5) onClick of Place Order button it navigates to <ViewOrderApi/> component using   
+   react-router history() method  
+ 
+
+>> View Order API <<
+1) Place order is a class component which used only for API call
+2) It uses third-party feature called as axios to fetch API
+3) It is being navigated from <PlaceOrder/> component via Place Order button
+
+>> View Order Display <<
+1) ViewOrderDisplay is a functional component which used for display purpose
+1) It contains heading(Order List) and Table with previous ordered record
+

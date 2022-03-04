@@ -31,6 +31,13 @@ class RestaurantsDetails extends Component {
     this.setState({ menuItems: data });
   };
 
+  proceed = () => {
+    sessionStorage.setItem("menu", this.state.menuItems);
+    this.props.history.push(
+      `/placeOrder/${this.state.details.restaurant_name}`
+    );
+  };
+
   render() {
     return (
       <div className="restaurantsDetailsClass">
@@ -63,23 +70,12 @@ class RestaurantsDetails extends Component {
             <Tabs>
               <div className="tabList">
                 <TabList>
-                  <Tab>Menu</Tab>
                   <Tab>Details</Tab>
                   <Tab>Contact</Tab>
+                  <Tab>Menu</Tab>
                 </TabList>
               </div>
 
-              <TabPanel>
-                <div>
-                  <MenuDisplay
-                    menu={this.state.menu}
-                    finalOrder={(id) => {
-                      this.addToCart(id);
-                    }}
-                  />
-                  <br />
-                </div>
-              </TabPanel>
               <TabPanel>
                 <div>
                   {this.state.details.restaurant_name} is simply dummy text of
@@ -102,8 +98,24 @@ class RestaurantsDetails extends Component {
                 <p> 🏛️Address: {this.state.details.address}</p>
                 <br />
               </TabPanel>
+              <TabPanel>
+                <div>
+                  <MenuDisplay
+                    menu={this.state.menu}
+                    finalOrder={(id) => {
+                      this.addToCart(id);
+                    }}
+                  />
+                  <br />
+                </div>
+              </TabPanel>
             </Tabs>
-            <Button sx={{ marginTop: 1 }} variant="contained" color="success">
+            <Button
+              sx={{ marginTop: 1 }}
+              variant="contained"
+              color="success"
+              onClick={this.proceed}
+            >
               Proceed
             </Button>
           </div>
