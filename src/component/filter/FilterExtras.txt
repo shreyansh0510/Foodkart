@@ -1,0 +1,17 @@
+>> Cusine Filter <<
+
+1) It is a class component
+2) It uses thirdparty axios to call the API
+3) It is being navigated from <Listing/> component
+4) It filters the data by cuisine selected
+5) It works using onChange event which filters data by using axios to get filter
+   API data and passes it to its parent component i.e. <Listing/>
+
+>> Cost Filter <<
+
+1) It is a class component
+2) It uses thirdparty axios to call the API
+3) It is being navigated from <Listing/> component i.e. its parent
+4) It filters the data by cost selected
+5) It works using onChange event which filters data by using axios to get
+   filter API data and passes it to its parent component i.e. <Listing/>

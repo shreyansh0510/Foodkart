@@ -59,6 +59,12 @@ function ListingDisplay(props) {
             </div>
           );
         });
+      } else {
+        return (
+          <>
+            <div className="dataNotFound">No data found for filter</div>
+          </>
+        );
       }
     } else {
       return (

@@ -5,12 +5,11 @@
 }
 
 .listingFilter {
-  width: 40%;
-  border: 2px solid gray;
-  height: 80vh;
-}
-
-.filterText {
-  font-size: 1rem;
-  color: gray;
+  width: 25%;
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 5px;
+  height: 50vh;
+  margin: 10px;
+  box-shadow: 1px 1px 2px 0px #b9b9b9;
+  padding: 20px;
 }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Search.css";
 import RoomTwoToneIcon from "@mui/icons-material/RoomTwoTone";
 import FastfoodTwoToneIcon from "@mui/icons-material/FastfoodTwoTone";
+import { withRouter } from "react-router-dom";
 
 // local api varaibles
 const cityUrl = "https://zomatoajulypi.herokuapp.com/location";
@@ -42,6 +43,10 @@ class Search extends Component {
       .then((data) => this.setState({ restaurants: data }));
   };
 
+  handleRestaurant = (event) => {
+    this.props.history.push(`/details/${event.target.value}`);
+  };
+
   // function to render restaurants under search restaurants dropdown
   renderRestaurants = (data) => {
     if (data) {
@@ -56,11 +61,12 @@ class Search extends Component {
   };
 
   render() {
+    console.log(">>inside search", this.props);
     return (
       <>
         <div className="search">
           <div className="searchImage">
-            <img src="/images/home1.jpg" alt="home" height />
+            <img src="/images/home1.jpg" alt="home" />
           </div>
 
           <div className="searchSection">
@@ -81,7 +87,11 @@ class Search extends Component {
               </div>
               <div className="dropdownRestraunt">
                 <FastfoodTwoToneIcon />
-                <select name="restaurants" id="restaurant">
+                <select
+                  name="restaurants"
+                  id="restaurant"
+                  onChange={this.handleRestaurant}
+                >
                   <option value="">----select restaurants----</option>
                   {this.renderRestaurants(this.state.restaurants)}
                 </select>
@@ -106,4 +116,4 @@ class Search extends Component {
   }
 }
 
-export default Search;
+export default withRouter(Search);
