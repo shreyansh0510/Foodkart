@@ -6,6 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 
 const menuUrl = "https://zomatoajulypi.herokuapp.com/menuItem";
+//create local api name booking.json for FETCH and POST request
 const postUrl = "http://localhost:3214/booking";
 
 class PlaceOrder extends Component {
@@ -13,75 +14,58 @@ class PlaceOrder extends Component {
     super(props);
     this.state = {
       id: Math.floor(Math.random() * 100000),
-      resaurantName: this.props.match.params.restaurantName,
-      idDetails: [],
-      name: "shreyansh singh",
-      email: "shreynashsingh@gmail.com",
-      phone: "8052844555",
+      hotel_name: this.props.match.params.restaurantName,
+      details: [],
+      name: sessionStorage.getItem("userData")
+        ? sessionStorage.getItem("userData").split(",")[0]
+        : "", // condition to display user name by default by using session storage
+      email: sessionStorage.getItem("userData")
+        ? sessionStorage.getItem("userData").split(",")[1]
+        : "", // condition to display user email by default by using session storage
+      phone: sessionStorage.getItem("userData")
+        ? sessionStorage.getItem("userData").split(",")[2]
+        : "", // condition to display user phone by default by using session storage
       address: "123 DLF City Noida",
-      totalCost: "",
+      cost: 0,
     };
   }
-
-  // renderDetails = (data) => {
-  //   if (data) {
-  //     console.log("inside renderDetails >>", data);
-  //     data.map((items) => {
-  //       console.log(items);
-  //       return (
-  //         <Card key={items.menu_id} sx={{ maxWidth: 345 }}>
-  //           <CardMedia
-  //             component="img"
-  //             height="140"
-  //             image={items.menu_image}
-  //             alt={items.menu_name}
-  //           />
-  //           <CardContent>
-  //             <Typography gutterBottom variant="h5" component="div">
-  //               {items.menu_name}
-  //             </Typography>
-  //           </CardContent>
-  //         </Card>
-  //       );
-  //     });
-  //   }
-  // };
 
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
   handleSubmit = (event) => {
-    event.preventDefault();
-    //overwriting idDetails state value
-    var obj = this.state;
-    obj.idDetails = sessionStorage.getItem("menu");
+    if (sessionStorage.getItem("userData")) {
+      event.preventDefault();
+      var obj = this.state;
+      //overwriting details state value
+      obj.details = sessionStorage.getItem("menu");
 
-    fetch(postUrl, {
-      method: "POST",
-      headers: {
-        // accept: "application/json",
-        "content-type": "application/json",
-      },
-      // when sending data to  web server, the data has to be a string.
-      body: JSON.stringify(obj),
-    }).then(this.props.history.push(`/viewOrder`));
+      fetch(postUrl, {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          "content-type": "application/json",
+        },
+        // when sending data to  web server, the data has to be a string.
+        body: JSON.stringify(obj),
+      }).then(this.props.history.push("/viewOrder"));
+    } else {
+      this.props.history.push("/login");
+    }
   };
 
   render() {
     return (
       <div className="placeOrderClass">
-        <div className="restuarantName">
-          Welcome to {this.state.resaurantName}
-        </div>
+        <div className="restuarantName">Welcome to {this.state.hotel_name}</div>
         <br />
-        <div className="totalCost">Total Cost: Rs.{this.state.totalCost}</div>
+        <div className="totalCost">Total Cost: Rs.{this.state.cost}</div>
         <br />
-        {/* {this.renderDetails(this.state.idDetails)} */}
 
         {/* to display selected food  */}
         <div className="totalItems">
-          {this.state.idDetails.map((items, index) => {
+          {this.state.details.map((items, index) => {
             return (
               <div className="orderItems" key={index}>
                 <Card sx={{ width: 550, height: 200 }}>
@@ -103,7 +87,10 @@ class PlaceOrder extends Component {
         </div>
 
         {/* place order form */}
-        <form action="">
+        <form
+        // action="https://developerpayment.herokuapp.com/paynow"
+        // method="POST"
+        >
           <div className="orderForm">
             <div className="coloumn1">
               <label htmlFor="name">Name</label>
@@ -120,7 +107,7 @@ class PlaceOrder extends Component {
               <label htmlFor="email">Email</label>
               <br />
               <input
-                type="text"
+                type="email"
                 name="email"
                 id="email"
                 value={this.state.email}
@@ -133,7 +120,7 @@ class PlaceOrder extends Component {
               <label htmlFor="phone">Contact Number</label>
               <br />
               <input
-                type="text"
+                type="number"
                 name="phone"
                 id="phone"
                 value={this.state.phone}
@@ -153,6 +140,14 @@ class PlaceOrder extends Component {
               />
             </div>
           </div>
+          <input type="hidden" name="cost" value={this.state.cost} />
+          <input type="hidden" name="id" value={this.state.id} />
+          <input
+            type="hidden"
+            name="hotel_name"
+            value={this.state.hotel_name}
+          />
+
           <div className="checkoutButton">
             <button
               className="checkout"
@@ -199,7 +194,7 @@ class PlaceOrder extends Component {
           menuDetails.push(myObj);
           return "OK";
         });
-        this.setState({ totalCost: price, idDetails: menuDetails });
+        this.setState({ cost: price, details: menuDetails });
       });
   }
 }

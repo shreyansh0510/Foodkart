@@ -1,0 +1,13 @@
+<Header />
+
+Header displays based on 2 types-
+Header shows Greet msg and Logout if user is Logged in
+Header shows Login and SignUp if user is NOT Logged in
+
+<ViewOrderApi />
+
+View Order List is only displayed if user is logged in
+Inside cdm, we fetch data of a particular user by manipulating url inside axios api call
+If {user is logged in show his/her order} else {show error msg}
+
+

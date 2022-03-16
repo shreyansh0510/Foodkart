@@ -7,7 +7,7 @@
    react-router history() method  
  
 
->> View Order API <<
+>> View Order Api <<
 1) Place order is a class component which used only for API call
 2) It uses third-party feature called as axios to fetch API
 3) It is being navigated from <PlaceOrder/> component via Place Order button

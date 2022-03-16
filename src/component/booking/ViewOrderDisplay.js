@@ -3,19 +3,20 @@ import "./ViewOrderDisplay.css";
 
 function ViewOrderDisplay(props) {
   const renderOrdeList = ({ bookdata }) => {
+    console.log(bookdata);
     if (bookdata) {
       return bookdata.map((items, index) => {
         return (
           <tr key={index}>
             <td>{items.id}</td>
-            <td>{items.resaurantName}</td>
+            <td>{items.hotel_name}</td>
             <td>{items.name}</td>
             <td>{items.phone}</td>
             <td>{items.email}</td>
-            <td>{items.totalCost}</td>
-            <td>{items.date}</td>
+            <td>{items.cost}</td>
+            {/* <td>{items.date}</td>
             <td>{items.status}</td>
-            <td>{items.bankname}</td>
+            <td>{items.bankname}</td> */}
           </tr>
         );
       });
@@ -35,9 +36,9 @@ function ViewOrderDisplay(props) {
               <th>Phone</th>
               <th>Email</th>
               <th>Cost</th>
-              <th>Date</th>
+              {/* <th>Date</th>
               <th>Status</th>
-              <th>Bank Name</th>
+              <th>Bank Name</th> */}
             </tr>
           </thead>
           <tbody>{renderOrdeList(props)}</tbody>
